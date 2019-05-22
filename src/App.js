@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import Movies from './Movies';
+import Nav from './components/Nav'
+import MovieList from './components/MovieList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  render(){
+    // console.log(Movies)
+    return (
+      <div className='app'>
+        <Nav/>
+        <MovieList movies={Movies}/>
+      </div>
+    );
+
+  }
 }
 
 export default App;
+
+//some notes:
+//Movies is declared above on line 3, being imported locally
+//Then line 14 I pass it down to its child component (MovieList)
